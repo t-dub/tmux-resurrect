@@ -236,7 +236,7 @@ remove_old_backups() {
 }
 
 save_all() {
-	local resurrect_file_path="$(resurrect_file_path)"
+	resurrect_file_path="$(resurrect_file_path)"
 	local last_resurrect_file="$(last_resurrect_file)"
 	mkdir -p "$(resurrect_dir)"
 	fetch_and_dump_grouped_sessions > "$resurrect_file_path"
@@ -271,7 +271,7 @@ main() {
 		save_all
 		if show_output; then
 			stop_spinner
-			display_message "Tmux environment saved!"
+			display_message "Tmux environment saved in ${resurrect_file_path}!"
 		fi
 	fi
 }
